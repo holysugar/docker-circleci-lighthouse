@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#exec lighthouse "$@" --save-assets --chrome-flags="--headless --disable-gpu"
+exec lighthouse "$@" --chrome-flags="--headless --disable-gpu"
