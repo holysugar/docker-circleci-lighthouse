@@ -1,4 +1,4 @@
-FROM circleci/node:8-browsers
+FROM cimg/node:14.13.1-browsers
 LABEL maintainer "holysugar <holysugar@gmail.com>"
 USER root
 
