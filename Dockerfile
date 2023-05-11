@@ -1,8 +1,12 @@
-FROM cimg/node:14.13.1-browsers
+FROM cimg/node:16.20-browsers
 LABEL maintainer "holysugar <holysugar@gmail.com>"
 USER root
 
 WORKDIR /lighthouse
+
+RUN sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+RUN sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+RUN sudo apt-get update && sudo apt-get install -y google-chrome-stable
 
 RUN npm install -g lighthouse
 
